@@ -67,7 +67,7 @@ WARNING
   end
 
   def run_assets_precompile_rake_task
-    puts "\n\n\n#{Dir.wd}\n\n\n"
+    puts "\n\n\n#{Dir.pwd}\n\n\n"
 
     instrument "rails4.run_assets_precompile_rake_task" do
       log("assets_precompile") do
