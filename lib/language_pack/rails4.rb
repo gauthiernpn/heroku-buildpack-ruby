@@ -67,6 +67,8 @@ WARNING
   end
 
   def run_assets_precompile_rake_task
+    puts "\n\n\n#{Dir.wd}\n\n\n"
+
     instrument "rails4.run_assets_precompile_rake_task" do
       log("assets_precompile") do
         if Dir.glob("public/assets/{.sprockets-manifest-*.json,manifest-*.json}", File::FNM_DOTMATCH).any?
