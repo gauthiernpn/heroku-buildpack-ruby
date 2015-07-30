@@ -67,8 +67,6 @@ WARNING
   end
 
   def run_assets_precompile_rake_task
-    p ENV
-
     instrument "rails4.run_assets_precompile_rake_task" do
       log("assets_precompile") do
         if Dir.glob("public/assets/{.sprockets-manifest-*.json,manifest-*.json}", File::FNM_DOTMATCH).any?
@@ -76,7 +74,7 @@ WARNING
           return true
         end
 
-        precompile = rake.task("assets:precompile")
+        precompile = rake.task("assets:precompile:profile")
         return true unless precompile.is_defined?
 
         topic("Preparing app for Rails asset pipeline")
